@@ -2,7 +2,7 @@
 
 import { withPageAuthRequired } from '@auth0/nextjs-auth0/client';
 
-import { DangerButton, DefaultButton } from '@/components/buttons';
+import { DangerButton, DefaultButton } from '@/components/ui/buttons';
 import { PageContainer, PageContentContainer } from '@/components/containers';
 import { PasswordForm, UserInfoForm } from '@/components/forms';
 import { LoggedInHeader } from '@/components/headers';

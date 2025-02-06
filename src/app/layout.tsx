@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import "./globals.css";
+import { ScrollProgress } from '@/components/ScrollProgress';
+import { FloatingAction } from '@/components/FloatingAction';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
