@@ -5,7 +5,7 @@ import { apiUpdatePassword, apiUpdateProfile } from '@/lib/api/profile';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { DefaultButton } from './ui/buttons';
+import { DefaultButton } from './ui/button';
 
 
 const userInfoFormSchema = z.object({

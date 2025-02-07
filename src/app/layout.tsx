@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import "./globals.css";
-import { ScrollProgress } from '@/components/ScrollProgress';
-import { FloatingAction } from '@/components/FloatingAction';
+import { ScrollProgress } from '@/components/scrollprogress';
+import { FloatingAction } from '@/components/floatingaction';
+import { ToastProvider } from "@/components/ui/toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +28,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <UserProvider>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {children}
-        </body>
-      </UserProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <UserProvider>
+          <ToastProvider>
+            <ScrollProgress />
+            {children}
+            <FloatingAction />
+          </ToastProvider>
+        </UserProvider>
+      </body>
     </html>
   );
 }
